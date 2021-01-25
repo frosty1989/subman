@@ -1,6 +1,6 @@
 //@@viewOn:imports
 import UU5 from "uu5g04";
-import { createVisualComponent, useScreenSize } from "uu5g04-hooks";
+import { createVisualComponent, useScreenSize, useSession  } from "uu5g04-hooks";
 import Config from "./config/config";
 import Css from "./subject.css.js";
 //@@viewOff:imports
@@ -41,6 +41,7 @@ const Subject = createVisualComponent({
 
     //@@viewOn: hooks
     const screenSize = useScreenSize();
+    const { identity } = useSession();
     //@@viewOff: hooks
 
     //@@viewOn:private
@@ -105,6 +106,9 @@ const Subject = createVisualComponent({
           </div>
           <div className={Css.text()}>
             {subject.credits}
+          </div>
+          <div className={Css.text()}>
+            {identity.uuIdentity}
           </div>
 
 

@@ -1,6 +1,6 @@
 //@@viewOn:imports
 import UU5 from "uu5g04";
-import { createVisualComponent } from "uu5g04-hooks";
+import { createVisualComponent, SessionProvider  } from "uu5g04-hooks";
 
 import Config from "./config/config.js";
 import SubjectInstanceProvider from "../bricks/subjects-instance-provider";
@@ -16,6 +16,7 @@ const SpaAuthenticated = createVisualComponent({
   render() {
     //@@viewOn:render
     return (
+    <SessionProvider session={UU5.Environment.getSession()}>
       <SubjectInstanceProvider>
         <SubjectsInstanceContext.Consumer>
           {({ state, errorData }) => {
@@ -34,6 +35,7 @@ const SpaAuthenticated = createVisualComponent({
           }}
         </SubjectsInstanceContext.Consumer>
       </SubjectInstanceProvider>
+    </SessionProvider>
     );
     //@@viewOff:render
   }
