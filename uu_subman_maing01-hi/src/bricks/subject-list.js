@@ -35,8 +35,9 @@ const SubjectList = createVisualComponent({
     }
 
     return (
-      <div>
+      <UU5.Bricks.Row>
         {subjects.map(subject => (
+        <UU5.Bricks.Column key={subject.id} colWidth="xs-12 m-6 l-4 xl-3">
           <Subject
             key={subject.id}
             subject={subject}
@@ -45,8 +46,9 @@ const SubjectList = createVisualComponent({
             onUpdate={onUpdate}
             onDelete={onDelete}
           />
+        </UU5.Bricks.Column>
         ))}
-      </div>
+      </UU5.Bricks.Row>
     );
     //@@viewOff:render
   }

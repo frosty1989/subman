@@ -1,6 +1,6 @@
 //@@viewOn:imports
 import UU5 from "uu5g04";
-import { createVisualComponent } from "uu5g04-hooks";
+import { createVisualComponent, useScreenSize } from "uu5g04-hooks";
 import Config from "./config/config";
 //@@viewOff:imports
 
@@ -37,6 +37,11 @@ const Subject = createVisualComponent({
   //@@viewOff:defaultProps
 
   render({ subject, colorSchema, onDelete }) {
+
+    //@@viewOn: hooks
+    const screenSize = useScreenSize();
+    //@@viewOff: hooks
+
     //@@viewOn:private
     function handleDelete() {
       onDelete(subject);
@@ -55,6 +60,15 @@ const Subject = createVisualComponent({
       );
     }
 
+    function renderCredits() {
+      if (screenSize === "xs") {
+        return null;
+      }
+    
+      let creditSize = screenSize === "s" ? "m" : "s";
+      return <div>{subject.subjectCredits}</div>
+    }
+
     if (!subject) {
       return null;
     }
@@ -63,7 +77,7 @@ const Subject = createVisualComponent({
       <UU5.Bricks.Card header={renderHeader()} colorSchema={colorSchema}>
         <div>Text:</div><div>{subject.text}</div>
         <div>Supervisor:</div><div>{subject.subjectSupervisor}</div>
-        <div>Credits:</div><div>{subject.subjectCredits}</div>
+        {renderCredits()}
 
       </UU5.Bricks.Card>
     );

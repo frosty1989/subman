@@ -21,6 +21,7 @@ const Subjects = createVisualComponent({
     //@@viewOff:hooks
     //@@viewOn:render
     return (
+    <UU5.Bricks.Container>
       <SubjectProvider>
         {({ viewState, subjects, handleCreate, handleDelete }) => {
           return (
@@ -32,6 +33,7 @@ const Subjects = createVisualComponent({
           );
         }}
       </SubjectProvider>
+    </UU5.Bricks.Container>
     );
     //@@viewOff:render
   }
