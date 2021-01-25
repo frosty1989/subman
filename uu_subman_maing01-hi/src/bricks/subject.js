@@ -2,6 +2,7 @@
 import UU5 from "uu5g04";
 import { createVisualComponent, useScreenSize } from "uu5g04-hooks";
 import Config from "./config/config";
+import Css from "./subject.css.js";
 //@@viewOff:imports
 
 const Subject = createVisualComponent({
@@ -36,7 +37,7 @@ const Subject = createVisualComponent({
   },
   //@@viewOff:defaultProps
 
-  render({ subject, colorSchema, onDelete }) {
+  render({ subject, colorSchema, onDetail, onUpdate, onDelete }) {
 
     //@@viewOn: hooks
     const screenSize = useScreenSize();
@@ -45,6 +46,14 @@ const Subject = createVisualComponent({
     //@@viewOn:private
     function handleDelete() {
       onDelete(subject);
+    }
+
+    function handleUpdate() {
+      onUpdate(subject);
+    }
+
+    function handleDetail() {
+      onDetail(joke);
     }
     //@@viewOff:private
 
@@ -74,12 +83,35 @@ const Subject = createVisualComponent({
     }
 
     return (
+      <UU5.Bricks.Card className={Css.main()} colorSchema={colorSchema}>
+        <div className={Css.header()} onClick={handleDetail}>
+          {subject.name}
+        </div>
+        <div className={Css.content()} onClick={handleDetail}>
+          <div className={Css.text()}>
+            {subject.text}
+
+          </div>
+        </div>
+        <div className={Css.footer()}>
+          <div>
+            <UU5.Bricks.Button onClick={handleUpdate} bgStyle="transparent">
+              <UU5.Bricks.Icon icon="mdi-pencil" />
+            </UU5.Bricks.Button>
+            <UU5.Bricks.Button onClick={handleDelete} bgStyle="transparent">
+              <UU5.Bricks.Icon icon="mdi-delete" />
+            </UU5.Bricks.Button>
+          </div>
+        </div>
+      </UU5.Bricks.Card>
+      /*
       <UU5.Bricks.Card header={renderHeader()} colorSchema={colorSchema}>
         <div>Text:</div><div>{subject.text}</div>
         <div>Supervisor:</div><div>{subject.subjectSupervisor}</div>
         {renderCredits()}
 
       </UU5.Bricks.Card>
+      */
     );
     //@@viewOff:render
   }
