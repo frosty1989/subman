@@ -4,7 +4,10 @@ import Config from "./config/config";
 import SubjectList from "../bricks/subject-list";
 import SubjectProvider from "../bricks/subject-provider";
 import SubjectCreate from "../bricks/subject-create";
+import SubjectsTitle from "../bricks/subjects-title";
 //@@viewOff:imports
+
+
 
 const Subjects = createVisualComponent({
   //@@viewOn:statics
@@ -12,12 +15,17 @@ const Subjects = createVisualComponent({
   //@@viewOff:statics
 
   render() {
+
+    //@@viewOn:hooks
+
+    //@@viewOff:hooks
     //@@viewOn:render
     return (
       <SubjectProvider>
         {({ viewState, subjects, handleCreate, handleDelete }) => {
           return (
             <>
+              <SubjectsTitle subjects={subjects} />
               <SubjectCreate onCreate={handleCreate} />
               <SubjectList subjects={subjects} onDelete={handleDelete} />
             </>
