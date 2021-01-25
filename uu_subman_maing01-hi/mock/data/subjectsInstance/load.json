@@ -1,0 +1,16 @@
+{
+    "awid": "4ef6a7b01b5942ecbfb925b249af987f",
+    "id": "5c9103df323cc0000c303009",
+    "sys": {
+      "cts": "2019-03-19T14:59:43.847Z",
+      "mts": "2020-04-16T13:55:18.896Z",
+      "rev": 4
+    },
+    "state": "active",
+    "name": "Demo uuSubman",
+    "authorizedProfileList": ["Authorities", "Executives", "Readers"],
+    "categoryList": [
+      {}
+
+    ]
+  }

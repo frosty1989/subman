@@ -2,7 +2,7 @@
 // Manual changes to this file are discouraged, if values are inconsistent with package.json setting.
 import UU5 from "uu5g04";
 
-const TAG = "UuSubman.";
+const TAG = "UU5.Tutorial.";
 
 export default {
   TAG,
@@ -13,4 +13,9 @@ export default {
       .replace(/[^a-z-]/g, ""),
     process.env.NAME + "/" + process.env.OUTPUT_NAME + "@" + process.env.VERSION // this helps preserve proper order of styles among loaded libraries
   ),
+  Profiles: {
+    AUTHORITIES: "Authorities",
+    EXECUTIVES: "Executives",
+    READERS: "Readers"
+  }
 };

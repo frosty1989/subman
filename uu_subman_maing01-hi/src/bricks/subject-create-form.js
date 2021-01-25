@@ -31,8 +31,8 @@ const SubjectCreateForm = createVisualComponent({
       <UU5.Forms.Form onSave={onSave} onCancel={onCancel} labelColWidth="xs-12 m-1" inputColWidth="xs-12 m-11">
         <UU5.Forms.Text label="Title" name="name" />
         <UU5.Forms.Text label="Text" name="text" />
-        <UU5.Forms.Text label="Supervisor" name="subjectSupervisor" />
-        <UU5.Forms.Text label="Credits" name="subjectCredits" />
+        <UU5.Forms.Text label="Supervisor" name="supervisor" />
+        <UU5.Forms.Text label="Credits" name="credits" />
         <UU5.Forms.Controls />
       </UU5.Forms.Form>
     );
