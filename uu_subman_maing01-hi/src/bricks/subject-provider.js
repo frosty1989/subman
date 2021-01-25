@@ -9,40 +9,40 @@ let initialSubjects = [
     id: 1,
     name: "Subject 1",
     text: "This is my subject 1...",
-    subjectSupervisor: "Martin Hanak",
-    subjectCredits: 12
+    supervisor: "Martin Hanak",
+    credits: 12
 
   },
   {
     id: 2,
     name: "Subject 2",
     text: "This is my subject 2...",
-    subjectSupervisor: "Martin Hanak",
-    subjectCredits: 12
+    supervisor: "Martin Hanak",
+    credits: 12
 
   },
   {
     id: 3,
     name: "Subject 3",
     text: "This is my subject 3...",
-    subjectSupervisor: "Martin Hanak",
-    subjectCredits: 12
+    supervisor: "Martin Hanak",
+    credits: 12
 
   },
   {
     id: 4,
     name: "Subject 4",
     text: "This is my subject 4...",
-    subjectSupervisor: "Martin Hanak",
-    subjectCredits: 12
+    supervisor: "Martin Hanak",
+    credits: 12
 
   },
   {
     id: 5,
     name: "Subject 5",
     text: "This is my subject 5...",
-    subjectSupervisor: "Martin Hanak",
-    subjectCredits: 12
+    supervisor: "Martin Hanak",
+    credits: 12
 
   }
 ];

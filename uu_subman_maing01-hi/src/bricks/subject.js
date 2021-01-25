@@ -16,8 +16,8 @@ const Subject = createVisualComponent({
     subject: UU5.PropTypes.shape({
       name: UU5.PropTypes.string.isRequired,
       text: UU5.PropTypes.string.isRequired,
-      subjectSupervisor: UU5.PropTypes.string,
-      subjectCredits: UU5.PropTypes.number
+      supervisor: UU5.PropTypes.string,
+      credits: UU5.PropTypes.number
 
     }),
     colorSchema: UU5.PropTypes.string,
@@ -53,7 +53,7 @@ const Subject = createVisualComponent({
     }
 
     function handleDetail() {
-      onDetail(joke);
+      onDetail(subject);
     }
     //@@viewOff:private
 
@@ -75,7 +75,7 @@ const Subject = createVisualComponent({
       }
     
       let creditSize = screenSize === "s" ? "m" : "s";
-      return <div>{subject.subjectCredits}</div>
+      return <div>{subject.credits}</div>
     }
 
     if (!subject) {
@@ -93,6 +93,21 @@ const Subject = createVisualComponent({
 
           </div>
         </div>
+          <div className={Css.text()}>
+              Supervisor:
+          </div>
+          <div className={Css.text()}>
+            {subject.supervisor}
+          </div>
+
+          <div className={Css.text()}>
+              Credits:
+          </div>
+          <div className={Css.text()}>
+            {subject.credits}
+          </div>
+
+
         <div className={Css.footer()}>
           <div>
             <UU5.Bricks.Button onClick={handleUpdate} bgStyle="transparent">
