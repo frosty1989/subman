@@ -1,7 +1,10 @@
 //@@viewOn:imports
 import UU5 from "uu5g04";
 import { createVisualComponent, useContext } from "uu5g04-hooks";
+import Calls from "calls";
+import SubjectsInstanceContext from "./subjects-instance-context";
 import Config from "./config/config";
+import Css from "./subject-detail-content.css";
 //@@viewOff:imports
 
 function Line({ icon, content }) {
@@ -23,6 +26,8 @@ const SubjectDetailContent = createVisualComponent({
     subject: UU5.PropTypes.shape({
       name: UU5.PropTypes.string.isRequired,
       text: UU5.PropTypes.string,
+      supervisor: UU5.PropTypes.string,
+      uuIdentity: UU5.PropTypes.string
     }).isRequired
   },
   //@@viewOff:propTypes
@@ -39,13 +44,18 @@ const SubjectDetailContent = createVisualComponent({
     //@@viewOff:hooks
 
     //@@viewOn:private
-
     //@@viewOff:private
 
     //@@viewOn:render
     return (
       <div>
         {subject.text}
+        {subject.supervisor}
+
+
+
+        <Line icon="mdi-account" content={subject.uuIdentityName} />
+
       </div>
     );
     //@@viewOff:render

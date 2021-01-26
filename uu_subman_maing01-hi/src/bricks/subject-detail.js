@@ -3,7 +3,7 @@ import UU5 from "uu5g04";
 import { createVisualComponentWithRef, useRef, useImperativeHandle } from "uu5g04-hooks";
 import Config from "./config/config";
 import SubjectDetailContent from "./subject-detail-content";
-
+import Css from "./subject-detail.css";
 //@@viewOff:imports
 
 const SubjectDetail = createVisualComponentWithRef({
