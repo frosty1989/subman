@@ -8,7 +8,7 @@ let initialSubjects = [
   {
     id: 1,
     name: "Subject 1",
-    text: "This is my subject 1...",
+    text: "Phasellus faucibus molestie nisl. Et harum quidem rerum facilis est et expedita distinctio. Fusce aliquam vestibulum ipsum. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Quisque porta. Nunc tincidunt ante vitae massa. Aliquam erat volutpat. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Pellentesque ipsum. Et harum quidem rerum facilis est et expedita distinctio. Fusce tellus odio, dapibus id fermentum quis, suscipit id erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Etiam bibendum elit eget erat. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Quisque porta. Integer vulputate sem a nibh rutrum consequat. Aliquam erat volutpat.",
     supervisor: "Martin Hanak",
     credits: 12
 

@@ -30,14 +30,14 @@ const Subject = createVisualComponent({
   //@@viewOn:defaultProps
   defaultProps: {
     subject: null,
-    colorSchema: "blue",
     onDetail: () => {},
     onUpdate: () => {},
-    onDelete: () => {}
+    onDelete: () => {},
+    onPage: () => {}
   },
   //@@viewOff:defaultProps
 
-  render({ subject, colorSchema, onDetail, onUpdate, onDelete }) {
+  render({ subject, colorSchema, onDetail, onUpdate, onDelete, onPage}) {
 
     //@@viewOn: hooks
     const screenSize = useScreenSize();
@@ -55,6 +55,10 @@ const Subject = createVisualComponent({
 
     function handleDetail() {
       onDetail(subject);
+    }
+
+    function handlePage() {
+      onPage(subject);
     }
     //@@viewOff:private
 
@@ -119,6 +123,9 @@ const Subject = createVisualComponent({
             </UU5.Bricks.Button>
             <UU5.Bricks.Button onClick={handleDelete} bgStyle="transparent">
               <UU5.Bricks.Icon icon="mdi-delete" />
+            </UU5.Bricks.Button>
+            <UU5.Bricks.Button onClick={handlePage} bgStyle="transparent">
+              <UU5.Bricks.Icon icon="uu5-menu" />
             </UU5.Bricks.Button>
           </div>
         </div>
