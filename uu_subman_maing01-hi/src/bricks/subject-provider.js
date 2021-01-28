@@ -7,44 +7,49 @@ import Config from "./config/config";
 let initialSubjects = [
   {
     id: 1,
-    name: "Subject 1",
-    text: "Phasellus faucibus molestie nisl. Et harum quidem rerum facilis est et expedita distinctio. Fusce aliquam vestibulum ipsum. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Quisque porta. Nunc tincidunt ante vitae massa. Aliquam erat volutpat. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Pellentesque ipsum. Et harum quidem rerum facilis est et expedita distinctio. Fusce tellus odio, dapibus id fermentum quis, suscipit id erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Etiam bibendum elit eget erat. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Quisque porta. Integer vulputate sem a nibh rutrum consequat. Aliquam erat volutpat.",
+    name: "Analytická geometrie",
+    credits: 12,
     supervisor: "Martin Hanak",
-    credits: 12
+    goal: "Phasellus faucibus molestie nisl. Et harum quidem rerum facilis est et expedita distinctio. Fusce aliquam vestibulum ipsum. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Quisque porta. Nunc tincidunt ante vitae massa. Aliquam erat volutpat. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Pellentesque ipsum. Et harum quidem rerum facilis est et expedita distinctio. Fusce tellus odio, dapibus id fermentum quis, suscipit id erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Etiam bibendum elit eget erat. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Quisque porta. Integer vulputate sem a nibh rutrum consequat. Aliquam erat volutpat.",
+    degree: "Bc.",
+    language: "EN",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut cursus velit libero,"
 
   },
   {
     id: 2,
-    name: "Subject 2",
-    text: "This is my subject 2...",
+    name: "Deskriptivní geometrie",
+    credits: 12,
     supervisor: "Martin Hanak",
-    credits: 12
+    goal: "Phasellus faucibus molestie nisl. Et harum quidem rerum facilis est et expedita distinctio. Fusce aliquam vestibulum ipsum. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Quisque porta. Nunc tincidunt ante vitae massa. Aliquam erat volutpat. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Pellentesque ipsum. Et harum quidem rerum facilis est et expedita distinctio. Fusce tellus odio, dapibus id fermentum quis, suscipit id erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Etiam bibendum elit eget erat. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Quisque porta. Integer vulputate sem a nibh rutrum consequat. Aliquam erat volutpat.",
+    degree: "Bc.",
+    language: "EN",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut cursus velit libero,"
 
   },
   {
     id: 3,
-    name: "Subject 3",
-    text: "This is my subject 3...",
-    supervisor: "Martin Hanak",
-    credits: 12
+    name: "Kvantová mechanika",
+    credits: 9,
+    supervisor: "Albert Einstein",
+    goal: "Phasellus faucibus molestie nisl. Et harum quidem rerum facilis est et expedita distinctio. Fusce aliquam vestibulum ipsum. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Quisque porta. Nunc tincidunt ante vitae massa. Aliquam erat volutpat. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Pellentesque ipsum. Et harum quidem rerum facilis est et expedita distinctio. Fusce tellus odio, dapibus id fermentum quis, suscipit id erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Etiam bibendum elit eget erat. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Quisque porta. Integer vulputate sem a nibh rutrum consequat. Aliquam erat volutpat.",
+    degree: "Bc.",
+    language: "EN",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut cursus velit libero,"
 
   },
   {
     id: 4,
-    name: "Subject 4",
-    text: "This is my subject 4...",
-    supervisor: "Martin Hanak",
-    credits: 12
+    name: "Klasická mechanika",
+    credits: 9,
+    supervisor: "Isaac Newton",
+    goal: "Phasellus faucibus molestie nisl. Et harum quidem rerum facilis est et expedita distinctio. Fusce aliquam vestibulum ipsum. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Quisque porta. Nunc tincidunt ante vitae massa. Aliquam erat volutpat. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Pellentesque ipsum. Et harum quidem rerum facilis est et expedita distinctio. Fusce tellus odio, dapibus id fermentum quis, suscipit id erat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Etiam bibendum elit eget erat. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Quisque porta. Integer vulputate sem a nibh rutrum consequat. Aliquam erat volutpat.",
+    degree: "Bc.",
+    language: "EN",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut cursus velit libero,"
 
   },
-  {
-    id: 5,
-    name: "Subject 5",
-    text: "This is my subject 5...",
-    supervisor: "Martin Hanak",
-    credits: 12
 
-  }
 ];
 
 const SubjectProvider = createComponent({

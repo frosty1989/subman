@@ -14,10 +14,14 @@ const Subject = createVisualComponent({
   //@@viewOn:propTypes
   propTypes: {
     subject: UU5.PropTypes.shape({
-      name: UU5.PropTypes.string.isRequired,
-      text: UU5.PropTypes.string.isRequired,
+      name: UU5.PropTypes.string,
+      credits: UU5.PropTypes.number,
       supervisor: UU5.PropTypes.string,
-      credits: UU5.PropTypes.number
+      goal: UU5.PropTypes.string,
+      degree: UU5.PropTypes.string,
+      language: UU5.PropTypes.string,
+      description: UU5.PropTypes.string,
+
 
     }),
     colorSchema: UU5.PropTypes.string,
@@ -92,28 +96,38 @@ const Subject = createVisualComponent({
         <div className={Css.header()} onClick={handleDetail}>
           {subject.name}
         </div>
-        <div className={Css.content()} onClick={handleDetail}>
-          <div className={Css.text()}>
-            {subject.text}
 
-          </div>
-        </div>
-          <div className={Css.text()}>
+          <div className={Css.textHeader()}>
               Supervisor:
           </div>
           <div className={Css.text()}>
             {subject.supervisor}
           </div>
 
-          <div className={Css.text()}>
+          <div className={Css.textHeader()}>
               Credits:
           </div>
           <div className={Css.text()}>
             {subject.credits}
           </div>
-          <div className={Css.text()}>
-            {identity.uuIdentity}
+          
+          <div className={Css.textHeader()}>
+              Degree:
           </div>
+          <div className={Css.text()}>
+            {subject.degree}
+          </div>
+        
+
+          <div className={Css.content()} onClick={handleDetail}>
+          <div className={Css.text()}>
+            {subject.text}
+
+          </div>
+        </div>
+
+
+
 
 
         <div className={Css.footer()}>
@@ -124,7 +138,7 @@ const Subject = createVisualComponent({
             <UU5.Bricks.Button onClick={handleDelete} bgStyle="transparent">
               <UU5.Bricks.Icon icon="mdi-delete" />
             </UU5.Bricks.Button>
-            <UU5.Bricks.Button onClick={handlePage} bgStyle="transparent">
+            <UU5.Bricks.Button onClick={handleDetail} bgStyle="transparent">
               <UU5.Bricks.Icon icon="uu5-menu" />
             </UU5.Bricks.Button>
           </div>

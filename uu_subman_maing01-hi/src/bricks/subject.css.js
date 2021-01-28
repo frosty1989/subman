@@ -29,11 +29,23 @@ const content = () => Config.Css.css`
   cursor: pointer;
 `;
 
+
+const textHeader = () => Config.Css.css`
+  font-size: 16px;
+  line-height: 21px;
+  max-height: 84px;
+  overflow: hidden;
+  color: DarkViolet;
+  display: inline-block;
+`;
+
 const text = () => Config.Css.css`
   font-size: 16px;
   line-height: 21px;
   max-height: 84px;
   overflow: hidden;
+  color: CornflowerBlue;
+  display: inline-block;
 `;
 
 const image = () => Config.Css.css`
@@ -68,5 +80,6 @@ export default {
   text,
   image,
   footer,
-  icon
+  icon,
+  textHeader
 };

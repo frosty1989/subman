@@ -49,10 +49,11 @@ const SubjectDetailContent = createVisualComponent({
     //@@viewOn:render
     return (
       <div>
-        {subject.text}
-        {subject.supervisor}
-
-
+        <UU5.Bricks.Text>{subject.name}</UU5.Bricks.Text>
+        <UU5.Bricks.Text>{subject.supervisor}</UU5.Bricks.Text>
+        <UU5.Bricks.Text>{subject.credits}</UU5.Bricks.Text>
+        <UU5.Bricks.Text>{subject.supervisor}</UU5.Bricks.Text>
+        <UU5.Bricks.Text>{subject.credits}</UU5.Bricks.Text>
 
         <Line icon="mdi-account" content={subject.uuIdentityName} />
 
