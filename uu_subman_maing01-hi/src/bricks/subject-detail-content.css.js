@@ -37,10 +37,20 @@ const icon = () => Config.Css.css`
   margin-right: 8px;
 `;
 
+const textHeader = () => Config.Css.css`
+  font-size: 16px;
+  line-height: 21px;
+  max-height: 84px;
+  overflow: hidden;
+  color: DarkViolet;
+  display: inline-block;
+`;
+
 export default {
   image,
   ratingBox,
   rating,
   line,
-  icon
+  icon,
+  textHeader
 };

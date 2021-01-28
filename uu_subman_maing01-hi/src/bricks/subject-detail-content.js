@@ -25,8 +25,12 @@ const SubjectDetailContent = createVisualComponent({
   propTypes: {
     subject: UU5.PropTypes.shape({
       name: UU5.PropTypes.string.isRequired,
-      text: UU5.PropTypes.string,
+      credits: UU5.PropTypes.string,
       supervisor: UU5.PropTypes.string,
+      goal: UU5.PropTypes.string,
+      degree: UU5.PropTypes.string,
+      language: UU5.PropTypes.string,
+      descriptiom: UU5.PropTypes.string,
       uuIdentity: UU5.PropTypes.string
     }).isRequired
   },
@@ -49,13 +53,42 @@ const SubjectDetailContent = createVisualComponent({
     //@@viewOn:render
     return (
       <div>
+        <div className={Css.textHeader()}>
+        <UU5.Bricks.Text>Name:</UU5.Bricks.Text>
+        </div>
         <UU5.Bricks.Text>{subject.name}</UU5.Bricks.Text>
-        <UU5.Bricks.Text>{subject.supervisor}</UU5.Bricks.Text>
-        <UU5.Bricks.Text>{subject.credits}</UU5.Bricks.Text>
-        <UU5.Bricks.Text>{subject.supervisor}</UU5.Bricks.Text>
+
+        <div className={Css.textHeader()}>
+        <UU5.Bricks.Text>Number of credits:</UU5.Bricks.Text>
+        </div>
         <UU5.Bricks.Text>{subject.credits}</UU5.Bricks.Text>
 
-        <Line icon="mdi-account" content={subject.uuIdentityName} />
+        <div className={Css.textHeader()}>
+        <UU5.Bricks.Text>Supervisor:</UU5.Bricks.Text>
+        </div>
+        <UU5.Bricks.Text>{subject.supervisor}</UU5.Bricks.Text>
+
+        <div className={Css.textHeader()}>
+        <UU5.Bricks.Text>Subject goal:</UU5.Bricks.Text>
+        </div>
+        <UU5.Bricks.Text>{subject.goal}</UU5.Bricks.Text>
+
+        <div className={Css.textHeader()}>
+        <UU5.Bricks.Text>Degree of study:</UU5.Bricks.Text>
+        </div>
+        <UU5.Bricks.Text>{subject.degree}</UU5.Bricks.Text>
+
+        <div className={Css.textHeader()}>
+        <UU5.Bricks.Text>Subject Language:</UU5.Bricks.Text>
+        </div>
+        <UU5.Bricks.Text>{subject.language}</UU5.Bricks.Text>
+
+        <div className={Css.textHeader()}>
+        <UU5.Bricks.Text>Description:</UU5.Bricks.Text>
+        </div>
+        <UU5.Bricks.Text>{subject.description}</UU5.Bricks.Text>
+
+
 
       </div>
     );
