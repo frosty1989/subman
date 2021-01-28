@@ -5,6 +5,8 @@ import Calls from "calls";
 import SubjectsInstanceContext from "./subjects-instance-context";
 import Config from "./config/config";
 import Css from "./subject-detail-content.css";
+import TopicProvider from "../bricks/topic-provider";
+import TopicList from "../bricks/topic-list";
 //@@viewOff:imports
 
 function Line({ icon, content }) {
@@ -53,40 +55,63 @@ const SubjectDetailContent = createVisualComponent({
     //@@viewOn:render
     return (
       <div>
+        <UU5.Bricks.Line colorSchema='primary' size='s'/>
         <div className={Css.textHeader()}>
         <UU5.Bricks.Text>Name:</UU5.Bricks.Text>
         </div>
         <UU5.Bricks.Text>{subject.name}</UU5.Bricks.Text>
 
+        <UU5.Bricks.Line colorSchema='primary' size='s'/>
         <div className={Css.textHeader()}>
         <UU5.Bricks.Text>Number of credits:</UU5.Bricks.Text>
         </div>
         <UU5.Bricks.Text>{subject.credits}</UU5.Bricks.Text>
 
+        <UU5.Bricks.Line colorSchema='primary' size='s'/>
         <div className={Css.textHeader()}>
         <UU5.Bricks.Text>Supervisor:</UU5.Bricks.Text>
         </div>
         <UU5.Bricks.Text>{subject.supervisor}</UU5.Bricks.Text>
 
+        <UU5.Bricks.Line colorSchema='primary' size='s'/>
         <div className={Css.textHeader()}>
         <UU5.Bricks.Text>Subject goal:</UU5.Bricks.Text>
         </div>
         <UU5.Bricks.Text>{subject.goal}</UU5.Bricks.Text>
 
+        <UU5.Bricks.Line colorSchema='primary' size='s'/>
         <div className={Css.textHeader()}>
         <UU5.Bricks.Text>Degree of study:</UU5.Bricks.Text>
         </div>
         <UU5.Bricks.Text>{subject.degree}</UU5.Bricks.Text>
 
+        <UU5.Bricks.Line colorSchema='primary' size='s'/>
         <div className={Css.textHeader()}>
         <UU5.Bricks.Text>Subject Language:</UU5.Bricks.Text>
         </div>
         <UU5.Bricks.Text>{subject.language}</UU5.Bricks.Text>
 
+        <UU5.Bricks.Line colorSchema='primary' size='s'/>
         <div className={Css.textHeader()}>
         <UU5.Bricks.Text>Description:</UU5.Bricks.Text>
         </div>
         <UU5.Bricks.Text>{subject.description}</UU5.Bricks.Text>
+    
+        <UU5.Bricks.Line colorSchema='primary' size='s'/>
+        <div className={Css.textHeader()}>
+        <UU5.Bricks.Text>Subject Topics:</UU5.Bricks.Text>
+        </div>
+        <TopicProvider>
+        {({ viewState, topics, handleCreate, handleDelete }) => {
+          return (
+            <>
+
+              <TopicList topics={topics} onDelete={handleDelete} />
+
+            </>
+          );
+        }}
+      </TopicProvider>
 
 
 

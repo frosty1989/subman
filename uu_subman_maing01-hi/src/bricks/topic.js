@@ -2,25 +2,23 @@
 import UU5 from "uu5g04";
 import { createVisualComponent, useScreenSize, useSession  } from "uu5g04-hooks";
 import Config from "./config/config";
-import Css from "./subject.css.js";
+import Css from "./topic.css.js";
+
 //@@viewOff:imports
 
-const Subject = createVisualComponent({
+const Topic = createVisualComponent({
   //@@viewOn:statics
-  displayName: Config.TAG + "Subject",
+  displayName: Config.TAG + "Topic",
   //@@viewOff:statics
 
 
   //@@viewOn:propTypes
   propTypes: {
-    subject: UU5.PropTypes.shape({
+    topic: UU5.PropTypes.shape({
       name: UU5.PropTypes.string,
-      credits: UU5.PropTypes.number,
-      supervisor: UU5.PropTypes.string,
-      goal: UU5.PropTypes.string,
-      degree: UU5.PropTypes.string,
-      language: UU5.PropTypes.string,
       description: UU5.PropTypes.string,
+      subjectId: UU5.PropTypes.number,
+
 
 
     }),
@@ -33,7 +31,7 @@ const Subject = createVisualComponent({
 
   //@@viewOn:defaultProps
   defaultProps: {
-    subject: null,
+    topic: null,
     onDetail: () => {},
     onUpdate: () => {},
     onDelete: () => {},
@@ -41,7 +39,7 @@ const Subject = createVisualComponent({
   },
   //@@viewOff:defaultProps
 
-  render({ subject, colorSchema, onDetail, onUpdate, onDelete, onPage}) {
+  render({ topic, colorSchema, onDetail, onUpdate, onDelete, onPage}) {
 
     //@@viewOn: hooks
     const screenSize = useScreenSize();
@@ -50,19 +48,19 @@ const Subject = createVisualComponent({
 
     //@@viewOn:private
     function handleDelete() {
-      onDelete(subject);
+      onDelete(topic);
     }
 
     function handleUpdate() {
-      onUpdate(subject);
+      onUpdate(topic);
     }
 
     function handleDetail() {
-      onDetail(subject);
+      onDetail(topic);
     }
 
     function handlePage() {
-      onPage(subject);
+      onPage(topic);
     }
     //@@viewOff:private
 
@@ -70,7 +68,7 @@ const Subject = createVisualComponent({
     function renderHeader() {
       return (
         <>
-          {subject.name}
+          {topic.name}
           <UU5.Bricks.Button onClick={handleDelete} colorSchema="red">
             <UU5.Bricks.Icon icon="mdi-delete" />
           </UU5.Bricks.Button>
@@ -84,65 +82,48 @@ const Subject = createVisualComponent({
       }
     
       let creditSize = screenSize === "s" ? "m" : "s";
-      return <div>{subject.credits}</div>
+      return <div>{topic.credits}</div>
     }
 
-    if (!subject) {
+    if (!topic) {
       return null;
     }
 
     return (
-      <UU5.Bricks.Card className={Css.main()} colorSchema={colorSchema}>
-        <div className={Css.header()} onClick={handleDetail}>
-          {subject.name}
-        </div>
-
-          <div className={Css.textHeader()}>
-              Supervisor:
-          </div>
-          <div className={Css.text()}>
-            {subject.supervisor}
-          </div>
-
-          <div className={Css.textHeader()}>
-              Credits:
-          </div>
-          <div className={Css.text()}>
-            {subject.credits}
-          </div>
-          
-          <div className={Css.textHeader()}>
-              Degree:
-          </div>
-          <div className={Css.text()}>
-            {subject.degree}
-          </div>
-        
-
-
-
-
-
-
-
-        <div className={Css.footer()}>
           <div>
-            <UU5.Bricks.Button onClick={handleUpdate} bgStyle="transparent">
+
+          <div className={Css.textHeader()}>
+              Name:
+          </div>
+          <div className={Css.text()}>
+            {topic.name}
+          </div>
+
+          <div className={Css.textHeader()}>
+              Description:
+          </div>
+          <div className={Css.text()}>
+            {topic.description}
+          </div>
+
+          <UU5.Bricks.Button onClick={handleUpdate} bgStyle="transparent">
               <UU5.Bricks.Icon icon="mdi-pencil" />
             </UU5.Bricks.Button>
             <UU5.Bricks.Button onClick={handleDelete} bgStyle="transparent">
               <UU5.Bricks.Icon icon="mdi-delete" />
             </UU5.Bricks.Button>
-            <UU5.Bricks.Button onClick={handleDetail} bgStyle="transparent">
-              <UU5.Bricks.Icon icon="uu5-menu" />
-            </UU5.Bricks.Button>
+
+
           </div>
-        </div>
-      </UU5.Bricks.Card>
+
+
+          
+        
+
       /*
       <UU5.Bricks.Card header={renderHeader()} colorSchema={colorSchema}>
-        <div>Text:</div><div>{subject.text}</div>
-        <div>Supervisor:</div><div>{subject.subjectSupervisor}</div>
+        <div>Text:</div><div>{topic.text}</div>
+        <div>Supervisor:</div><div>{topic.topicSupervisor}</div>
         {renderCredits()}
 
       </UU5.Bricks.Card>
@@ -152,4 +133,4 @@ const Subject = createVisualComponent({
   }
 });
 
-export default Subject;
+export default Topic;

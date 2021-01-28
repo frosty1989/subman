@@ -93,7 +93,7 @@ const Subject = createVisualComponent({
 
     return (
       <UU5.Bricks.Card className={Css.main()} colorSchema={colorSchema}>
-        <div className={Css.header()} onClick={handleDetail}>
+        <div className={Css.header()}>
           {subject.name}
         </div>
 
@@ -117,13 +117,6 @@ const Subject = createVisualComponent({
           <div className={Css.text()}>
             {subject.degree}
           </div>
-        
-
-
-
-
-
-
 
         <div className={Css.footer()}>
           <div>

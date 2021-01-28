@@ -2,17 +2,17 @@
 import UU5 from "uu5g04";
 import { createVisualComponent } from "uu5g04-hooks";
 import Config from "./config/config";
-import Subject from "./subject";
+import Topic from "./topic";
 //@@viewOff:imports
 
-const SubjectList = createVisualComponent({
+const TopicList = createVisualComponent({
   //@@viewOn:statics
-  displayName: Config.TAG + "SubjectList",
+  displayName: Config.TAG + "TopicList",
   //@@viewOff:statics
 
   //@@viewOn:propTypes
   propTypes: {
-    subjects: UU5.PropTypes.array.isRequired,
+    topics: UU5.PropTypes.array.isRequired,
     onDetail: UU5.PropTypes.func,
     onUpdate: UU5.PropTypes.func,
     onDelete: UU5.PropTypes.func
@@ -21,37 +21,39 @@ const SubjectList = createVisualComponent({
 
   //@@viewOn:defaultProps
   defaultProps: {
-    subjects: [],
+    topics: [],
     onDetail: () => {},
     onUpdate: () => {},
     onDelete: () => {}
   },
   //@@viewOff:defaultProps
 
-  render({ subjects, onDetail, onUpdate, onDelete }) {
+  render({ topics, onDetail, onUpdate, onDelete }) {
     //@@viewOn:render
-    if (subjects.length === 0) {
-      return <UU5.Common.Error content="No subjects!" />;
+    if (topics.length === 0) {
+      return <UU5.Common.Error content="No topics!" />;
     }
 
     return (
-      <UU5.Bricks.Row>
-        {subjects.map(subject => (
-        <UU5.Bricks.Column key={subject.id} colWidth="xs-12 m-6 l-4 xl-3">
-          <Subject
-            key={subject.id}
-            subject={subject}
-            colorSchema="blue"
+        <div>
+
+        {topics.map(topic => (
+
+          <Topic
+            key={topic.id}
+            topic={topic}
+            colorSchema="green"
             onDetail={onDetail}
             onUpdate={onUpdate}
             onDelete={onDelete}
           />
-        </UU5.Bricks.Column>
+
         ))}
-      </UU5.Bricks.Row>
+
+      </div>
     );
     //@@viewOff:render
   }
 });
 
-export default SubjectList;
+export default TopicList;
