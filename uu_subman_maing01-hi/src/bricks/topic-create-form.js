@@ -5,9 +5,9 @@ import Config from "./config/config";
 import "uu5g04-forms";
 //@@viewOff:imports
 
-const SubjectCreateForm = createVisualComponent({
+const TopicCreateForm = createVisualComponent({
   //@@viewOn:statics
-  displayName: Config.TAG + "SubjectCreateForm",
+  displayName: Config.TAG + "TopicCreateForm",
   //@@viewOff:statics
 
   //@@viewOn:propTypes
@@ -32,7 +32,7 @@ const SubjectCreateForm = createVisualComponent({
         <UU5.Forms.Text label="Name:" name="name" />
         <UU5.Forms.Text label="Credits:" name="text" />
         <UU5.Forms.Text label="Supervisor:" name="supervisor" />
-        <UU5.Forms.Text label="Subject goal:" name="goal" />
+        <UU5.Forms.Text label="Topic goal:" name="goal" />
         <UU5.Forms.Select
           label="Degree:" name="degree"
         >
@@ -53,4 +53,4 @@ const SubjectCreateForm = createVisualComponent({
   }
 });
 
-export default SubjectCreateForm;
+export default TopicCreateForm;

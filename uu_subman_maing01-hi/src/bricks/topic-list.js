@@ -3,7 +3,19 @@ import UU5 from "uu5g04";
 import { createVisualComponent } from "uu5g04-hooks";
 import Config from "./config/config";
 import Topic from "./topic";
+import Subject from "./subject";
 //@@viewOff:imports
+
+function conditionalRender(topic) {
+
+
+    if (subject.id == topic.subjectId) {
+    
+        return true;
+
+    }
+
+  }
 
 const TopicList = createVisualComponent({
   //@@viewOn:statics
@@ -37,6 +49,7 @@ const TopicList = createVisualComponent({
     return (
         <div>
 
+
         {topics.map(topic => (
 
           <Topic
@@ -49,6 +62,7 @@ const TopicList = createVisualComponent({
           />
 
         ))}
+
 
       </div>
     );

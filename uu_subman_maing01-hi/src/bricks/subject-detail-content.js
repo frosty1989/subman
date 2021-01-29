@@ -7,6 +7,7 @@ import Config from "./config/config";
 import Css from "./subject-detail-content.css";
 import TopicProvider from "../bricks/topic-provider";
 import TopicList from "../bricks/topic-list";
+import TopicCreate from "../bricks/topic-create";
 //@@viewOff:imports
 
 function Line({ icon, content }) {
@@ -27,7 +28,7 @@ const SubjectDetailContent = createVisualComponent({
   propTypes: {
     subject: UU5.PropTypes.shape({
       name: UU5.PropTypes.string.isRequired,
-      credits: UU5.PropTypes.string,
+      credits: UU5.PropTypes.number,
       supervisor: UU5.PropTypes.string,
       goal: UU5.PropTypes.string,
       degree: UU5.PropTypes.string,
@@ -55,6 +56,13 @@ const SubjectDetailContent = createVisualComponent({
     //@@viewOn:render
     return (
       <div>
+
+        if(true) {
+
+<UU5.Bricks.Text>True</UU5.Bricks.Text>
+
+        }
+
         <UU5.Bricks.Line colorSchema='primary' size='s'/>
         <div className={Css.textHeader()}>
         <UU5.Bricks.Text>Name:</UU5.Bricks.Text>
@@ -96,16 +104,25 @@ const SubjectDetailContent = createVisualComponent({
         <UU5.Bricks.Text>Description:</UU5.Bricks.Text>
         </div>
         <UU5.Bricks.Text>{subject.description}</UU5.Bricks.Text>
+
+        <UU5.Bricks.Line colorSchema='primary' size='s'/>
+        <div className={Css.textHeader()}>
+        <UU5.Bricks.Text>Subject ID:</UU5.Bricks.Text>
+        </div>
+        <UU5.Bricks.Text>{subject.id}</UU5.Bricks.Text>
     
         <UU5.Bricks.Line colorSchema='primary' size='s'/>
         <div className={Css.textHeader()}>
         <UU5.Bricks.Text>Subject Topics:</UU5.Bricks.Text>
+  
         </div>
         <TopicProvider>
         {({ viewState, topics, handleCreate, handleDelete }) => {
           return (
             <>
-
+              <div>
+              <TopicCreate onCreate={handleCreate} />
+              </div>
               <TopicList topics={topics} onDelete={handleDelete} />
 
             </>

@@ -16,18 +16,38 @@ let initialTopics = [
     id: 2,
     name: "Druhé téma",
     description: "Toto je druhé téma prvního předmětu. Budeme se zabývat ...",
-    subjectId: 2
+    subjectId: 1
 
   },
   {
     id: 3,
     name: "Třetí téma",
     description: "Toto je třetí téma prvního předmětu. Budeme se zabývat ...",
-    subjectId: 3
-    
+    subjectId: 1
+
   },
 
+  {
+    id: 4,
+    name: "První téma prvního předmětu",
+    description: "Toto je první téma druhého předmětu. Budeme se zabývat ...",
+    subjectId: 2
 
+  },
+  {
+    id: 5,
+    name: "Druhé téma",
+    description: "Toto je druhé téma druhého předmětu. Budeme se zabývat ...",
+    subjectId: 2
+
+  },
+  {
+    id: 6,
+    name: "Třetí téma",
+    description: "Toto je třetí téma druhého předmětu. Budeme se zabývat ...",
+    subjectId: 2
+    
+  },
 
 
 ];

@@ -48,7 +48,7 @@ export const Left = createVisualComponent({
         <Plus4U5.App.MenuTree
           borderBottom
           // NOTE Item "id" equals to useCase so that item gets automatically selected when route changes (see spa-autheticated.js).
-          items={[{ id: "home", href: "home", content: <UU5.Bricks.Lsi lsi={Lsi.left.home} /> },
+          items={[
           { id: "subjects", href: "subjects", content: <UU5.Bricks.Lsi lsi={Lsi.left.subjects} /> } // Add this line
         
         
