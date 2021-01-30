@@ -6,12 +6,13 @@ import Plus4U5 from "uu_plus4u5g01";
 
 let Calls = {
   /** URL containing app base, e.g. "https://uuos9.plus4u.net/vnd-app/awid/". */
-  APP_BASE_URI: "https://uuapp.plus4u.net/uu-subjects-maing01/4ef6a7b01b5942ecbfb925b249af987f/",
+  //APP_BASE_URI: "https://uuapp.plus4u.net/uu-subjects-maing01/4ef6a7b01b5942ecbfb925b249af987f/",
+  APP_BASE_URI: location.protocol + "//" + location.host + UU5.Environment.getAppBasePath(),
 
-  async call(method, url, dtoIn, clientOptions) {
-    let response = await Plus4U5.Common.Calls.call(method, url, dtoIn, clientOptions);
-    return response.data;
-  },
+async call(method, url, dtoIn, clientOptions) {
+  const response = await Plus4U5.Common.Calls.call(method, url, dtoIn, clientOptions);
+  return response.data;
+},
 
   listSubjects(dtoIn) {
     let commandUri = Calls.getCommandUri("subject/list");
@@ -33,6 +34,7 @@ let Calls = {
     return Calls.call("post", commandUri, dtoIn);
   },
 
+  /*
   loadIdentityProfiles() {
     let commandUri = Calls.getCommandUri("sys/uuAppWorkspace/initUve");
     return Calls.call("get", commandUri, {});
@@ -53,10 +55,14 @@ let Calls = {
     return await Calls.getWorkspace();
   },
 
+  */
+
   loadSubjectsInstance(dtoIn) {
     let commandUri = Calls.getCommandUri("subjectsInstance/load");
     return Calls.call("get", commandUri, dtoIn);
   },
+
+  
 
   /*
   For calling command on specific server, in case of developing client site with already deployed

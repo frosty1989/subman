@@ -30,23 +30,31 @@ const SubjectList = createVisualComponent({
 
   render({ subjects, onDetail, onUpdate, onDelete }) {
     //@@viewOn:render
+  
     if (subjects.length === 0) {
+    //if ((subjects === null) || (subjects === undefined) || subjects.length === 0) {
       return <UU5.Common.Error content="No subjects!" />;
     }
 
     return (
       <UU5.Bricks.Row>
+        {/*
+           a multiline comment in React
+      
+        */}
+
         {subjects.map(subject => (
-        <UU5.Bricks.Column key={subject.id} colWidth="xs-12 m-6 l-4 xl-3">
-          <Subject
-            key={subject.id}
-            subject={subject}
-            colorSchema="blue"
-            onDetail={onDetail}
-            onUpdate={onUpdate}
-            onDelete={onDelete}
-          />
-        </UU5.Bricks.Column>
+
+
+         <UU5.Bricks.Column key={subject.data.id} colWidth="xs-12 m-6 l-4 xl-3">
+         <Subject
+           subject={subject.data}
+           colorSchema="blue"
+           onDetail={onDetail}
+           onUpdate={onUpdate}
+           onDelete={onDelete}
+         />
+          </UU5.Bricks.Column>
         ))}
       </UU5.Bricks.Row>
     );
