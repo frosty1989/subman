@@ -32,17 +32,17 @@ const TopicList = createVisualComponent({
     onDelete: UU5.PropTypes.func,
     subjectId: UU5.PropTypes.string,
 
-
     subject: UU5.PropTypes.shape({
-        name: UU5.PropTypes.string.isRequired,
-        credits: UU5.PropTypes.number,
-        supervisor: UU5.PropTypes.string,
-        goal: UU5.PropTypes.string,
-        degree: UU5.PropTypes.string,
-        language: UU5.PropTypes.string,
-        descriptiom: UU5.PropTypes.string,
-        uuIdentity: UU5.PropTypes.string
-      }).isRequired
+      name: UU5.PropTypes.string,
+      credits: UU5.PropTypes.number,
+      supervisor: UU5.PropTypes.string,
+      goal: UU5.PropTypes.string,
+      degree: UU5.PropTypes.string,
+      language: UU5.PropTypes.string,
+      description: UU5.PropTypes.string,
+
+
+    })
 
 
   },

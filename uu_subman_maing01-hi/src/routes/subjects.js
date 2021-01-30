@@ -7,6 +7,7 @@ import SubjectProvider from "../bricks/subject-provider";
 import SubjectCreate from "../bricks/subject-create";
 import SubjectsTitle from "../bricks/subjects-title";
 import SubjectDetail from "../bricks/subject-detail";
+import SubjectUpdateForm from "../bricks/subject-update-form";
 //@@viewOff:imports
 
 const Subjects = createVisualComponent({
@@ -20,6 +21,7 @@ const Subjects = createVisualComponent({
     const updateSubjectRef = useRef();
     const deleteSubjectRef = useRef();
     const detailRef = useRef();
+    const updateFormRef = useRef();
     //@viewOff:hooks
 
     //@@viewOn:private
@@ -60,6 +62,11 @@ const Subjects = createVisualComponent({
     function openDetail(subject) {
         detailRef.current.open(subject);
       }
+
+    
+    function openUpdateForm(joke) {
+        updateFormRef.current.open(joke);
+      }
     //@@viewOff:private
 
     //@@viewOn:render
@@ -73,7 +80,8 @@ const Subjects = createVisualComponent({
 
           <SubjectsTitle subjects={subjects} />
           <SubjectCreate onCreate={handleCreateSubject} />
-          <SubjectList subjects={subjects} onDetail={openDetail} onDelete={handleDeleteSubject} />
+          <SubjectList subjects={subjects} onDetail={openDetail} onUpdate={openUpdateForm} onDelete={handleDeleteSubject} />
+          <SubjectUpdateForm ref={updateFormRef} onSave={handleUpdateSubject} />
           <SubjectDetail ref={detailRef} />
 
         </>

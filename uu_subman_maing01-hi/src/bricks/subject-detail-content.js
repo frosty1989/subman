@@ -121,15 +121,17 @@ const SubjectDetailContent = createVisualComponent({
 
         </div>
         {renderBender() && (
-        <TopicProvider subjectId={254}>
-        {({ viewState, topics, handleCreate, handleDelete, subjects, subjectId }) => {
+        <TopicProvider subject={subject}>
+        {({ viewState, topics, handleCreate, handleDelete, subjects, subject }) => {
           return (
             <>
               <div>
+              <div>A text</div>
+              <div></div>
               <TopicCreate onCreate={handleCreate} />
-              <UU5.Bricks.Text>{subjectId}</UU5.Bricks.Text>
+              <UU5.Bricks.Text>{subject}</UU5.Bricks.Text>
               </div>
-              <TopicList topics={topics} subjects={subjects} onDelete={handleDelete} subjectId = {subjectId} />
+              <TopicList topics={topics} subjects={subjects} onDelete={handleDelete} subject = {subject} />
 
             </>
           );

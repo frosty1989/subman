@@ -56,8 +56,34 @@ const TopicProvider = createComponent({
   //@@viewOn:statics
   displayName: Config.TAG + "TopicProvider",
   //@@viewOff:statics
+
+    //@@viewOn:propTypes
+    propTypes: {
   
-  render({ children }) {
+      subject: UU5.PropTypes.shape({
+        name: UU5.PropTypes.string,
+        credits: UU5.PropTypes.number,
+        supervisor: UU5.PropTypes.string,
+        goal: UU5.PropTypes.string,
+        degree: UU5.PropTypes.string,
+        language: UU5.PropTypes.string,
+        description: UU5.PropTypes.string,
+  
+  
+      })
+  
+  
+    },
+    //@@viewOff:propTypes
+  
+    //@@viewOn:defaultProps
+    defaultProps: {
+      subject: null,
+
+    },
+    //@@viewOff:defaultProps
+  
+  render({ children}) {
 
     //@viewOn:hooks
     const [topics, setTopics] = useState(initialTopics);
@@ -76,7 +102,7 @@ const TopicProvider = createComponent({
     //@@viewOff:private
 
     //@@viewOn:render
-    return children({ topics, handleCreate, handleDelete });
+    return children({ topics, handleCreate, handleDelete});
     //@@viewOff:render
   }
 });
