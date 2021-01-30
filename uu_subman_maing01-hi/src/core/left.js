@@ -45,6 +45,8 @@ export const Left = createVisualComponent({
         aboutItems={[{ content: <UU5.Bricks.Lsi lsi={Lsi.left.about} />, href: "about" }]}
         helpHref={null}
       >
+      <UU5.Bricks.Text>This is a sample text. Will be deleted.</UU5.Bricks.Text>
+
         <Plus4U5.App.MenuTree
           borderBottom
           // NOTE Item "id" equals to useCase so that item gets automatically selected when route changes (see spa-autheticated.js).

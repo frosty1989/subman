@@ -56,7 +56,7 @@ const TopicProvider = createComponent({
   //@@viewOn:statics
   displayName: Config.TAG + "TopicProvider",
   //@@viewOff:statics
-
+  
   render({ children }) {
 
     //@viewOn:hooks

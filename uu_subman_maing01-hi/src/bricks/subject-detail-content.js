@@ -8,6 +8,8 @@ import Css from "./subject-detail-content.css";
 import TopicProvider from "../bricks/topic-provider";
 import TopicList from "../bricks/topic-list";
 import TopicCreate from "../bricks/topic-create";
+import SubjectProvider from "../bricks/subject-provider";
+import SubjectList from "../bricks/subject-list";
 //@@viewOff:imports
 
 function Line({ icon, content }) {
@@ -27,6 +29,7 @@ const SubjectDetailContent = createVisualComponent({
   //@@viewOn:propTypes
   propTypes: {
     subject: UU5.PropTypes.shape({
+      id:UU5.PropTypes.string,
       name: UU5.PropTypes.string.isRequired,
       credits: UU5.PropTypes.number,
       supervisor: UU5.PropTypes.string,
@@ -45,24 +48,25 @@ const SubjectDetailContent = createVisualComponent({
   },
   //@@viewOff:defaultProps
 
+
   render({ subject }) {
     //@@viewOn:hooks
 
     //@@viewOff:hooks
 
-    //@@viewOn:private
-    //@@viewOff:private
+   //@@viewOn:private
+   function renderBender() {
+    return true;
+  }
+   //@@viewOff:private
+
 
     //@@viewOn:render
     return (
       <div>
 
-        if(true) {
 
-<UU5.Bricks.Text>True</UU5.Bricks.Text>
-
-        }
-
+        
         <UU5.Bricks.Line colorSchema='primary' size='s'/>
         <div className={Css.textHeader()}>
         <UU5.Bricks.Text>Name:</UU5.Bricks.Text>
@@ -114,22 +118,24 @@ const SubjectDetailContent = createVisualComponent({
         <UU5.Bricks.Line colorSchema='primary' size='s'/>
         <div className={Css.textHeader()}>
         <UU5.Bricks.Text>Subject Topics:</UU5.Bricks.Text>
-  
+
         </div>
-        <TopicProvider>
-        {({ viewState, topics, handleCreate, handleDelete }) => {
+        {renderBender() && (
+        <TopicProvider subjectId={254}>
+        {({ viewState, topics, handleCreate, handleDelete, subjects, subjectId }) => {
           return (
             <>
               <div>
               <TopicCreate onCreate={handleCreate} />
+              <UU5.Bricks.Text>{subjectId}</UU5.Bricks.Text>
               </div>
-              <TopicList topics={topics} onDelete={handleDelete} />
+              <TopicList topics={topics} subjects={subjects} onDelete={handleDelete} subjectId = {subjectId} />
 
             </>
           );
         }}
       </TopicProvider>
-
+      )}
 
 
       </div>

@@ -57,7 +57,24 @@ const SubjectProvider = createComponent({
   displayName: Config.TAG + "SubjectProvider",
   //@@viewOff:statics
 
-  render({ children }) {
+  //@@viewOn:propTypes
+  propTypes: {
+
+    subjectId: UU5.propTypes
+
+  },
+  //@@viewOff:propTypes 
+
+
+  //@@viewOn:defaultProps
+  propTypes: {
+
+    subjectId: 0
+
+  },
+  //@@viewOff:defaultProps 
+
+  render({ children, subjectId}) {
 
     //@viewOn:hooks
     const [subjects, setSubjects] = useState(initialSubjects);
@@ -76,7 +93,7 @@ const SubjectProvider = createComponent({
     //@@viewOff:private
 
     //@@viewOn:render
-    return children({ subjects, handleCreate, handleDelete });
+    return children({ subjects, handleCreate, handleDelete, subjectId });
     //@@viewOff:render
   }
 });

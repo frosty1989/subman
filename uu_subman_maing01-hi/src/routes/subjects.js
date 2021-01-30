@@ -6,6 +6,7 @@ import SubjectProvider from "../bricks/subject-provider";
 import SubjectCreate from "../bricks/subject-create";
 import SubjectsTitle from "../bricks/subjects-title";
 import SubjectDetail from "../bricks/subject-detail";
+import {WelcomeFunction, WelcomeClass, WelcomeFunctionProps} from "../bricks/my-component";
 //@@viewOff:imports
 
 
@@ -29,15 +30,17 @@ const Subjects = createVisualComponent({
 
     //@@viewOn:render
     return (
+
     <UU5.Bricks.Container>
       <SubjectProvider>
-        {({ viewState, subjects, handleCreate, handleDelete }) => {
+        {({ viewState, subjects, handleCreate, handleDelete, subjectId }) => {
           return (
             <>
+              <UU5.Bricks.Text>{subjectId}</UU5.Bricks.Text>
               <SubjectsTitle subjects={subjects} />
               <SubjectCreate onCreate={handleCreate} />
-              <SubjectList subjects={subjects} onDetail={openDetail} onDelete={handleDelete} />
-              <SubjectDetail ref={detailRef} />
+              <SubjectList subjectId = {subjectId} subjects={subjects} onDetail={openDetail} onDelete={handleDelete} />
+              <SubjectDetail subjectId = {subjectId} ref={detailRef} />
             </>
           );
         }}

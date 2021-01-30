@@ -30,21 +30,6 @@ const TopicCreateForm = createVisualComponent({
     return (
       <UU5.Forms.Form onSave={onSave} onCancel={onCancel} labelColWidth="xs-12 m-1" inputColWidth="xs-12 m-11">
         <UU5.Forms.Text label="Name:" name="name" />
-        <UU5.Forms.Text label="Credits:" name="text" />
-        <UU5.Forms.Text label="Supervisor:" name="supervisor" />
-        <UU5.Forms.Text label="Topic goal:" name="goal" />
-        <UU5.Forms.Select
-          label="Degree:" name="degree"
-        >
-          <UU5.Forms.Select.Option value="Bc."/>
-          <UU5.Forms.Select.Option value="Mgr."/>
-        </UU5.Forms.Select>
-        <UU5.Forms.Select
-          label="Language:" name="language"
-        >
-          <UU5.Forms.Select.Option value="CZ"/>
-          <UU5.Forms.Select.Option value="EN"/>
-        </UU5.Forms.Select>
         <UU5.Forms.Text label="Description:" name="description" />
         <UU5.Forms.Controls />
       </UU5.Forms.Form>
