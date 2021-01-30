@@ -6,6 +6,7 @@ import SubjectList from "../bricks/subject-list";
 import SubjectProvider from "../bricks/subject-provider";
 import SubjectCreate from "../bricks/subject-create";
 import SubjectsTitle from "../bricks/subjects-title";
+import SubjectDetail from "../bricks/subject-detail";
 //@@viewOff:imports
 
 const Subjects = createVisualComponent({
@@ -18,6 +19,7 @@ const Subjects = createVisualComponent({
     const createSubjectRef = useRef();
     const updateSubjectRef = useRef();
     const deleteSubjectRef = useRef();
+    const detailRef = useRef();
     //@viewOff:hooks
 
     //@@viewOn:private
@@ -54,6 +56,10 @@ const Subjects = createVisualComponent({
         showError(`Deletion of ${subject.name} failed!`);
       }
     }
+
+    function openDetail(subject) {
+        detailRef.current.open(subject);
+      }
     //@@viewOff:private
 
     //@@viewOn:render
@@ -67,7 +73,8 @@ const Subjects = createVisualComponent({
 
           <SubjectsTitle subjects={subjects} />
           <SubjectCreate onCreate={handleCreateSubject} />
-          <SubjectList subjects={subjects} onDelete={handleDeleteSubject} />
+          <SubjectList subjects={subjects} onDetail={openDetail} onDelete={handleDeleteSubject} />
+          <SubjectDetail ref={detailRef} />
 
         </>
       );
