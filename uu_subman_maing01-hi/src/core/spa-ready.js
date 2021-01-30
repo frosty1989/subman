@@ -21,11 +21,11 @@ const STATICS = {
 
 const About = UU5.Common.Component.lazy(() => import("../routes/about"));
 
-const DEFAULT_USE_CASE = "home";
+const DEFAULT_USE_CASE = "subjects";
 
 const ROUTES = {
   "": DEFAULT_USE_CASE,
-  home: { component: <Home /> },
+  //home: { component: <Home /> },
   about: { component: <About /> },
   subjects: { component: <Subjects /> }
 };
